@@ -114,3 +114,16 @@ function ResetContent() {
 	passwordFirst.textContent = '';
 	passwordSecond.textContent = '';
 }
+
+async function copy(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+		console.log('Content copied to clipboard');
+		alert('Copied the text: ' + text);
+	} catch (err) {
+		console.error('Failed to copy: ', err);
+	}
+}
+
+passwordFirst.addEventListener('click', () => copy(passwordFirst.innerText));
+passwordSecond.addEventListener('click', () => copy(passwordSecond.innerText));
