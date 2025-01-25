@@ -1,3 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100...500&family=Karla:wght@800&display=swap');
+
+:root {
+    --color-body-bg: #1C1C1C;
+    /* Dark Colors */
+    --color-primary-bg-dark: #1F2937;
+    --color-button-bg-dark: #10B981;
+    --color-button-bg-hover-dark: #0f6448;
+    --color-password-bg-dark: #273549;
+    --color-title-primary-dark: #FFFFFF;
+    --color-title-secondary-dark: #4ADF86;
+    --color-description-dark: #D5D4D8;
+    --color-password-text-dark: #55F991;
+    --color-line-dark: #2F3E53;
+
+    /* Light Colors */
+    --color-primary-bg-light: #FFFFFF;
+    --color-button-bg-light: #10B981;
+    --color-button-bg-hover-light: #0f6448;
+    --color-password-bg-light: #273549;
+    --color-title-primary-light: #2B283A;
+    --color-title-secondary-light: #10B981;
+    --color-description-light: #6B7280;
+    --color-password-text-light: #5DEF92;
+    --color-line-light: #D5D4D8;
+}
+
+html {
+    height: 100%;
+}
+
+.dark {
+    --color-primary-bg: var(--color-primary-bg-dark);
+    --color-title-primary: var(--color-title-primary-dark);
+    --color-title-secondary: var(--color-title-secondary-dark);
+    --color-description: var(--color-description-dark);
+    --color-button-bg: var(--color-button-bg-dark);
+    --color-button-bg-hover: var(--color-button-bg-hover-dark);
+    --color-password-bg: var(--color-password-bg-dark);
+    --color-password-text: var(--color-password-text-dark);
+    --color-line: var(--color-line-dark);
+}
+
+.light {
+    --color-primary-bg: var(--color-primary-bg-light);
+    --color-title-primary: var(--color-title-primary-light);
+    --color-title-secondary: var(--color-title-secondary-light);
+    --color-description: var(--color-description-light);
+    --color-button-bg: var(--color-button-bg-light);
+    --color-button-bg-hover: var(--color-button-bg-hover-light);
+    --color-password-bg: var(--color-password-bg-light);
+    --color-password-text: var(--color-password-text-light);
+    --color-line: var(--color-line-light);
+}
+
 body {
     margin: 0;
+    height: inherit;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-body-bg);
+}
+
+p {
+    margin: 0;
+}
+
+hr {
+    color: var(--color-line);
+}
+
+.container {
+    width: 498px;
+    height: 320px;
+    padding: 7.1875rem 3.25rem;
+    background-color: var(--color-primary-bg);
+}
+
+.title {
+    font-family: "Karla", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: -5%;
+    margin: 0;
+    color: var(--color-title-primary);
+}
+
+.title .green {
+    color: var(--color-title-secondary);
+}
+
+.description {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-top: 0.625rem;
+    color: var(--color-description);
+}
+
+.btn {
+    color: #FFFFFF;
+    font-weight: 500;
+    padding: 0.5625rem 0.9375rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 3.1875rem 0 2.1875rem;
+    background-color: var(--color-button-bg);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.btn:hover {
+    background-color: var(--color-button-bg-hover);
+}
+
+.wrapper {
+    margin-top: 2.1875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.password {
+    width: 211px;
+    height: 39px;
+    text-align: center;
+    line-height: 2rem;
+    font-weight: 500;
+    border-radius: 6px;
+    color: var(--color-password-text);
+    background-color: var(--color-password-bg);
 }
