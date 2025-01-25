@@ -131,7 +131,7 @@ hr {
 
 .password-length {
     font-weight: 500;
-    color: var(--color-description);
+    color: var(--color-title-primary);
 }
 
 #password-length {
@@ -140,7 +140,7 @@ hr {
     display: inline-block;
     width: 30px;
     height: 30px;
-    color: #FFFFFF;
+    color: var(--color-password-text);
     font-size: 1rem;
     font-weight: 500;
     background-color: var(--color-password-bg);
@@ -160,4 +160,69 @@ hr {
     cursor: pointer;
     color: var(--color-password-text);
     background-color: var(--color-password-bg);
+}
+
+.checkbox-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 25px;
+    color: var(--color-title-primary);
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 2px;
+    background-color: var(--color-password-bg);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: var(--color-description);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--color-button-bg);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 3px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

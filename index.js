@@ -95,16 +95,20 @@ const characters = [
 const passwordFirst = document.getElementById('password-01');
 const passwordSecond = document.getElementById('password-02');
 const passwordLength = document.getElementById('password-length');
+const checkboxNumber = document.getElementById('checkbox-number');
+const checkboxSymbol = document.getElementById('checkbox-symbol');
 
 function generatePassword() {
 	ResetContent();
 
-	for (let index = 0; index < passwordLength.value; index++) {
-		const characterIndex = Math.floor(Math.random() * characters.length);
+	const characterResult = getCharactersMatch();
 
-		passwordFirst.textContent += characters[characterIndex];
+	for (let index = 0; index < passwordLength.value; index++) {
+		const characterIndex = Math.floor(Math.random() * characterResult.length);
+
+		passwordFirst.textContent += characterResult[characterIndex];
 		passwordSecond.textContent +=
-			characters[
+			characterResult[
 				characterIndex === 0 ? characterIndex + 1 : characterIndex - 1
 			];
 	}
@@ -123,6 +127,20 @@ async function copy(text) {
 	} catch (err) {
 		console.error('Failed to copy: ', err);
 	}
+}
+
+function getCharactersMatch() {
+	if (!checkboxNumber.checked && !checkboxSymbol.checked) {
+		return characters.join().match(/[a-zA-Z]/gi);
+	} else if (checkboxNumber.checked && !checkboxSymbol.checked) {
+		return characters.join().match(/[a-zA-Z0-9]/gi);
+	} else if (checkboxSymbol.checked && !checkboxNumber.checked) {
+		return characters
+			.join()
+			.match(/[a-zA-Z-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/gi);
+	}
+
+	return characters;
 }
 
 passwordFirst.addEventListener('click', () => copy(passwordFirst.innerText));
