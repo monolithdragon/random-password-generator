@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100...500&family=Karla:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Karla:wght@800&display=swap');
 
 :root {
     --color-body-bg: #1C1C1C;
@@ -114,7 +114,6 @@ hr {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    margin: 3.1875rem 0 2.1875rem;
     background-color: var(--color-button-bg);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
 }
@@ -124,10 +123,31 @@ hr {
 }
 
 .wrapper {
-    margin-top: 2.1875rem;
+    margin-block: 2.1875rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.password-length {
+    font-weight: 500;
+    color: var(--color-description);
+}
+
+#password-length {
+    border: none;
+    text-align: center;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--color-password-bg);
+}
+
+#password-length:focus {
+    outline: 1px solid var(--color-button-bg);
 }
 
 .password {
@@ -137,6 +157,7 @@ hr {
     line-height: 2rem;
     font-weight: 500;
     border-radius: 6px;
+    cursor: pointer;
     color: var(--color-password-text);
     background-color: var(--color-password-bg);
 }
